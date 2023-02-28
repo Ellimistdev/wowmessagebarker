@@ -1,4 +1,4 @@
-## Interface-Retail: 100005
+## Interface: 100005
 ## Interface-Classic: 11307
 ## Interface-BC: 20501
 ## Title: MessageBarker
