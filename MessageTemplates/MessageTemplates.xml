@@ -20,4 +20,5 @@
 	</Frame>
 	<Include file="MessageTemplates/BasicMessageTemplate.xml"/>
 	<Include file="MessageTemplates/SaleMessageTemplate.xml"/>
+	<Include file="MessageTemplates/GuildMessageTemplate.xml"/>
 </Ui>

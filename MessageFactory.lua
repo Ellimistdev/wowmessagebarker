@@ -4,6 +4,7 @@ MessageFactory = {}
 MessageBarker_MessageTypes = {
 	Basic = 1,
 	Sale = 2,
+	Guild = 3,
 }
 
 do
@@ -17,6 +18,7 @@ function MessageFactory:LoadFactoryMethods()
 	self.MessageFactoryMethods = {
 		[MessageBarker_MessageTypes.Basic]	= MessageFactory.CreateMessage_Basic,
 		[MessageBarker_MessageTypes.Sale]	= MessageFactory.CreateMessage_Sale,
+		[MessageBarker_MessageTypes.Guild]	= MessageFactory.CreateMessage_Guild,
 	}
 end
 
@@ -43,6 +45,7 @@ function MessageFactory:LoadTextGenerators()
 	self.TextGenerators = {
 		[MessageBarker_MessageTypes.Basic]	= MessageFactory.GenerateText_Basic,
 		[MessageBarker_MessageTypes.Sale]	= MessageFactory.GenerateText_Sale,
+		[MessageBarker_MessageTypes.Guild]	= MessageFactory.GenerateText_Guild,
 	}
 end
 
@@ -122,4 +125,17 @@ function MessageFactory:GenerateText_SaleItem(item)
 		itemPrice = item.price
 	end
 	return itemName .. itemPrice
+end
+
+function MessageFactory:CreateMessage_Guild()
+	local club = ClubFinderGetCurrentClubListingInfo(C_Club.GetGuildClubId());
+	local newMessage = {
+		name = "New Message",
+		content = 'Join' .. GetClubFinderLink(club.clubFinderGUID, club.name) .. "!",
+	}
+	return newMessage
+end
+
+function MessageFactory:GenerateText_Guild(message)
+	return message.content
 end
