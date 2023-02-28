@@ -2,7 +2,11 @@
 ..\FrameXML\UI_shared.xsd">
 	<Script file="MessageTemplates/MessageTemplates.lua"/>
 	<Frame name="MessageTemplate" virtual="true" mixin="MessageTemplateMixin">
-		<Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" tile="true" alphaMode="BLEND">
+		<KeyValues>
+			<KeyValue key="backdropInfo" value="MESSAGEBARKER_BACKDROP_TOOLTIP_16_16_5555" type="global"/>
+		</KeyValues>
+		
+		<!-- <Backdrop bgFile="Interface\TutorialFrame\TutorialFrameBackground" tile="true" alphaMode="BLEND">
 			<EdgeSize>
 				<AbsValue val="16"/>
 			</EdgeSize>
@@ -12,7 +16,7 @@
 			<BackgroundInsets>
 				<AbsInset left="5" right="5" top="5" bottom="5"/>
 			</BackgroundInsets>
-		</Backdrop>
+		</Backdrop> -->
 	</Frame>
 	<Include file="MessageTemplates/BasicMessageTemplate.xml"/>
 	<Include file="MessageTemplates/SaleMessageTemplate.xml"/>
